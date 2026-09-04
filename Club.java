@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Club {
 
@@ -9,14 +9,24 @@ public class Club {
     private String ubicacion;
     private String categoria;
 
-    public Club(int id, String nombre, String descripcion, String horario, String ubicacion, String categoria) {
+    private ArrayList<Membresia> miembros;
 
+    public Club(
+            int id,
+            String nombre,
+            String descripcion,
+            String horario,
+            String ubicacion,
+            String categoria
+    ) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.horario = horario;
         this.ubicacion = ubicacion;
         this.categoria = categoria;
+
+        miembros = new ArrayList<Membresia>();
     }
 
     public int getId() {
@@ -67,13 +77,51 @@ public class Club {
         this.categoria = categoria;
     }
 
-    public void agregarMiembro() {
+    public ArrayList<Membresia> getMiembros() {
+        return miembros;
+    }
+
+    public void setMiembros(
+            ArrayList<Membresia> miembros
+    ) {
+        this.miembros = miembros;
+    }
+
+    public void agregarMiembro(Membresia membresia) {
+        miembros.add(membresia);
     }
 
     public void publicarAviso() {
+        System.out.println(
+                "El club " + nombre + " publicó un nuevo aviso."
+        );
     }
 
-    public List miembrosActivos() {
-        return null;
+    public ArrayList<Membresia> miembrosActivos() {
+        ArrayList<Membresia> activos =
+                new ArrayList<Membresia>();
+
+        for (Membresia membresia : miembros) {
+            if (membresia.getEstado()
+                    == EstadoMiembro.ACTIVO) {
+
+                activos.add(membresia);
+            }
+        }
+
+        return activos;
+    }
+
+    @Override
+    public String toString() {
+        return "Club{"
+                + "id=" + id
+                + ", nombre='" + nombre + '\''
+                + ", descripcion='" + descripcion + '\''
+                + ", horario='" + horario + '\''
+                + ", ubicacion='" + ubicacion + '\''
+                + ", categoria='" + categoria + '\''
+                + ", cantidadMiembros=" + miembros.size()
+                + '}';
     }
 }
