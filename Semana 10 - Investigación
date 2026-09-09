@@ -1,0 +1,81 @@
+SEMANA 10 
+Realicé Investigación Tecnología y persistencia - Katherine
+
+Investigación de la tecnología usada 
+Para realizar el proyecto investigamos algunas tecnologías que se podían utilizar para programar el sistema. 	Las opciones que comparamos fueron Java, Python y C#, ya que las tres permiten trabajar con programación 	orientada a objetos. 
+Después de comparar las opciones, decidimos utilizar Java porque es el lenguaje que hemos trabajado en clase y se adapta al proyecto. Nos permite pasar las clases del diagrama UML a código y utilizar atributos, métodos, constructores, enumeraciones y herencia. Para escribir el código utilizamos Visual Studio Code, ya que permite crear y organizar los archivos de Java. También usamos GitHub para guardar el proyecto y compartir los avances entre las integrantes.  
+En conclusión, elegimos Java porque ya conocemos su estructura y porque nos permite aplicar los temas vistos en programación orientada a objetos. Además, más adelante se le pueden agregar otras funciones al sistema sin tener que volver a realizar todas las clases. 
+
+1. Java 
+Ventaja: Permite trabajar con clases, objetos, herencia y otros temas vistos en clase. También puede utilizarse en diferentes sistemas operativos. 
+Desventaja: En algunas partes se necesita escribir bastante código y su estructura puede ser un poco larga. 
+
+2. Python
+Ventaja: Su código es más corto y fácil de leer. También permite crear programas de forma rápida. 
+Desventaja: No es el lenguaje principal que estamos utilizando en el curso. 
+
+3. C# 
+Ventaja: Permite trabajar con programación orientada a objetos y crear interfaces gráficas. 
+Desventaja: Necesitaríamos aprender a utilizar otras herramientas y trabajar con .NET. 
+
+Después de comparar las opciones, decidimos utilizar Java porque es el lenguaje que hemos trabajado en clase y se adapta al proyecto. Nos permite pasar las clases del diagrama UML a código y utilizar atributos, métodos, constructores, enumeraciones y herencia. Para escribir el código utilizamos Visual Studio Code, ya que permite crear y organizar los archivos de Java. También usamos GitHub para guardar el proyecto y compartir los avances entre las integrantes. En conclusión, elegimos Java porque ya conocemos su estructura y porque nos permite aplicar los temas vistos en programación orientada a objetos. Además, más adelante se le pueden agregar otras funciones al sistema sin tener que volver a realizar todas las clases. 
+
+Investigación de persistencia
+La persistencia sirve para que la información del programa no se pierda cuando este se cierre. Por ejemplo, si 	registramos un estudiante o una actividad, necesitamos que esos datos sigan guardados la próxima vez que 	se abra el sistema. 
+
+En este proyecto se necesita guardar información sobre: 
+    - Usuarios.  
+    - Clubes.  
+    - Membresías.  
+    - Actividades.  
+    - Asistencias.  
+    - Notificaciones.  
+Investigamos diferentes opciones para guardar los datos:
+Opción: Archivos de texto
+
+Ventajas: Son sencillos de crear y no necesitan instalar otra herramienta.
+
+Desventajas: La información puede quedar desordenada y puede ser difícil modificarla.
+
+Opción: Archivos CSV
+
+Ventajas: Guardan la información en filas y columnas y se pueden abrir fácilmente.
+
+Desventajas: No es el lenguaje principal que estamos utilizando en el curso.
+
+Opción: SQLite
+
+Ventajas: Permite organizar la información en tablas y no necesita un servidor.
+
+Desventajas: Es necesario saber utilizar consultas SQL y conectarlo con Java.
+
+Opción: MySQL
+
+Ventajas: Puede guardar bastante información y relacionar diferentes tablas.
+
+Desventajas: Necesita instalar y configurar un servidor, por lo que sería más complicado para este proyecto.
+
+Para esta etapa elegimos utilizar archivos CSV, porque son más sencillos de trabajar en Java y nuestro sistema todavía es un prototipo. También permiten revisar fácilmente si la información fue guardada correctamente.
+
+Podríamos utilizar diferentes archivos, por ejemplo:
+
+Archivo: usuarios.csv
+Información: Datos de estudiantes y coordinadores.
+
+Archivo: clubes.csv
+Información: Información de los clubes.
+
+Archivo: membresias.csv
+Información: Estado de los miembros.
+
+Archivo: actividades.csv
+Información: Actividades creadas.
+
+Archivo: asistencias.csv
+Información: Registros de asistencias.
+
+Archivo: notificaciones.csv
+Información: Avisos enviados.
+
+Al iniciar el programa, se podrían leer estos archivos para recuperar la información. Cuando se agregue o cambie algún dato, también se tendría que actualizar el archivo correspondiente. Consideramos que CSV es una buena opción para esta etapa porque no requiere instalar una base de datos. Sin embargo, si el sistema llegara a utilizarse con más usuarios y una mayor cantidad de información, sería mejor utilizar SQLite o MySQL.
+
