@@ -1,4 +1,4 @@
-# Proyecto-Entrega-2.-Modulos
-Primera semana 
-Código de módulos 
-java Main
+# Proyecto-Entrega-2.
+Integrantes: 
+- Katherine Estrada - 261266
+- Abril Santizo - 261508
