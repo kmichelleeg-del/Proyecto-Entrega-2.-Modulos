@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Gestión de clubes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f5f9;
+            color: #222;
+        }
+
+        header {
+            padding: 25px;
+            color: white;
+            text-align: center;
+            background: #234578;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 24px;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000015;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #234578;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            margin: 7px 0;
+            padding: 11px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #7fa3df;
+            border-color: #3766b1;
+        }
+
+        button {
+            color: white;
+            font-weight: bold;
+            background: #3766b1;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #234578;
+        }
+
+        .consulta {
+            text-align: center;
+            background: #e9f0ff;
+        }
+
+        .boton-enlace {
+            display: inline-block;
+            padding: 12px 22px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            background: #17815c;
+            border-radius: 6px;
+        }
+
+        .boton-enlace:hover {
+            background: #0e6445;
+        }
+
+        footer {
+            padding: 20px;
+            color: #666;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                margin: 15px auto;
+                padding: 0 12px;
+            }
+
+            section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Gestión de clubes universitarios</h1>
+        <p>Universidad del Valle de Guatemala</p>
+    </header>
+
+    <main>
+        <section class="consulta">
+            <h2>Información registrada</h2>
+
+            <p>
+                Consulta los miembros, identificadores,
+                estados y actividades registradas.
+            </p>
+
+            <a href="/datos" class="boton-enlace">
+                Mostrar todos los datos
+            </a>
+        </section>
+
+        <section>
+            <h2>Agregar miembro</h2>
+
+            <form action="/agregar-miembro" method="post">
+                <label for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Ejemplo: María López"
+                    required
+                >
+
+                <label for="correo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    placeholder="nombre@uvg.edu.gt"
+                    required
+                >
+
+                <label for="carne">
+                    Carné
+                </label>
+
+                <input
+                    id="carne"
+                    name="carne"
+                    placeholder="Ejemplo: 260011"
+                    required
+                >
+
+                <label for="estado-miembro">
+                    Estado
+                </label>
+
+                <select
+                    id="estado-miembro"
+                    name="estado"
+                >
+                    <option value="ACTIVO">
+                        Activo
+                    </option>
+
+                    <option value="INACTIVO">
+                        Inactivo
+                    </option>
+
+                    <option value="PENDIENTE_CONFIRMACION">
+                        Pendiente de confirmación
+                    </option>
+
+                    <option value="RETIRADO">
+                        Retirado
+                    </option>
+                </select>
+
+                <button type="submit">
+                    Agregar miembro
+                </button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Cambiar estado de un miembro</h2>
+
+            <form action="/cambiar-estado" method="post">
+                <label for="miembro-id">
+                    ID del estudiante
+                </label>
+
+                <input
+                    id="miembro-id"
+                    name="id"
+                    type="number"
+                    min="1"
+                    placeholder="Ejemplo: 3"
+                    required
+                >
+
+                <label for="nuevo-estado">
+                    Nuevo estado
+                </label>
+
+                <select
+                    id="nuevo-estado"
+                    name="estado"
+                >
+                    <option value="ACTIVO">
+                        Activo
+                    </option>
+
+                    <option value="INACTIVO">
+                        Inactivo
+                    </option>
+
+                    <option value="PENDIENTE_CONFIRMACION">
+                        Pendiente de confirmación
+                    </option>
+
+                    <option value="RETIRADO">
+                        Retirado
+                    </option>
+                </select>
+
+                <button type="submit">
+                    Cambiar estado
+                </button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Agregar actividad</h2>
+
+            <form action="/agregar-actividad" method="post">
+                <label for="actividad-nombre">
+                    Nombre de la actividad
+                </label>
+
+                <input
+                    id="actividad-nombre"
+                    name="nombre"
+                    placeholder="Ejemplo: Ensayo general"
+                    required
+                >
+
+                <label for="fecha-hora">
+                    Fecha y hora
+                </label>
+
+                <input
+                    id="fecha-hora"
+                    name="fechaHora"
+                    type="datetime-local"
+                    required
+                >
+
+                <label for="lugar">
+                    Lugar
+                </label>
+
+                <input
+                    id="lugar"
+                    name="lugar"
+                    placeholder="Ejemplo: Salón de música"
+                    required
+                >
+
+                <label for="tipo">
+                    Tipo de actividad
+                </label>
+
+                <input
+                    id="tipo"
+                    name="tipo"
+                    placeholder="Ejemplo: Ensayo"
+                    required
+                >
+
+                <button type="submit">
+                    Agregar actividad
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        CC2008 – Programación Orientada a Objetos
+    </footer>
+</body>
+</html>

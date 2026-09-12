@@ -10,9 +10,7 @@ public class VistaClub {
 
     public int mostrarMenu() {
         System.out.println();
-        System.out.println("==============================");
         System.out.println("     GESTIÓN DE CLUBES");
-        System.out.println("==============================");
         System.out.println("1. Mostrar miembros");
         System.out.println("2. Crear actividad");
         System.out.println("3. Mostrar actividades");
@@ -46,7 +44,7 @@ public class VistaClub {
 
     public boolean leerSiNo(String mensaje) {
         while (true) {
-            System.out.print(mensaje + " (s/n): ");
+            System.out.print(mensaje + " (si/no): ");
             String respuesta = teclado.nextLine();
 
             if (respuesta.equalsIgnoreCase("s")) {
@@ -57,7 +55,7 @@ public class VistaClub {
                 return false;
             }
 
-            System.out.println("Escriba s o n.");
+            System.out.println("Escriba si o no.");
         }
     }
 

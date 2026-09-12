@@ -8,8 +8,13 @@ public class Actividad {
     private String lugar;
     private String tipo;
 
-    public Actividad(int id, String nombre, LocalDateTime fechaHora, String lugar, String tipo) {
-
+    public Actividad(
+            int id,
+            String nombre,
+            LocalDateTime fechaHora,
+            String lugar,
+            String tipo
+    ) {
         this.id = id;
         this.nombre = nombre;
         this.fechaHora = fechaHora;
@@ -37,7 +42,9 @@ public class Actividad {
         return fechaHora;
     }
 
-    public void setFechaHora(LocalDateTime fechaHora) {
+    public void setFechaHora(
+            LocalDateTime fechaHora
+    ) {
         this.fechaHora = fechaHora;
     }
 
