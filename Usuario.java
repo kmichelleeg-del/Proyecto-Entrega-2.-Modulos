@@ -44,10 +44,4 @@ public class Usuario {
         this.carne = carne;
     }
 
-    public boolean iniciarSesion() {
-        return true;
-    }
-
-    public void cerrarSesion() {
-    }
 }

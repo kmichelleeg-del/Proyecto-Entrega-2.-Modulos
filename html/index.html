@@ -11,22 +11,32 @@
     <title>Gestión de clubes</title>
 
     <style>
+        :root {
+            --verde: #009444;
+            --dorado: #d79b27;
+            --gris: #5d7079;
+            --fondo: #eef1f2;
+            --blanco: #ffffff;
+            --texto: #263238;
+        }
+
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
+            color: var(--texto);
             font-family: Arial, sans-serif;
-            background: #f3f5f9;
-            color: #222;
+            background: var(--fondo);
         }
 
         header {
-            padding: 25px;
-            color: white;
+            padding: 30px 20px;
+            color: var(--blanco);
             text-align: center;
-            background: #234578;
+            background: var(--verde);
+            border-bottom: 8px solid var(--dorado);
         }
 
         header h1 {
@@ -46,14 +56,27 @@
         section {
             margin-bottom: 24px;
             padding: 24px;
-            background: white;
+            background: var(--blanco);
+            border-left: 6px solid var(--gris);
             border-radius: 12px;
             box-shadow: 0 3px 12px #00000015;
         }
 
+        section.consulta {
+            text-align: center;
+            border-left-color: var(--dorado);
+        }
+
         h2 {
             margin-top: 0;
-            color: #234578;
+            color: var(--gris);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: var(--gris);
+            font-weight: bold;
         }
 
         input,
@@ -63,51 +86,43 @@
             margin: 7px 0;
             padding: 11px;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #b8c1c5;
             border-radius: 6px;
         }
 
         input:focus,
         select:focus {
-            outline: 2px solid #7fa3df;
-            border-color: #3766b1;
+            outline: 2px solid var(--dorado);
+            border-color: var(--verde);
         }
 
         button {
-            color: white;
+            color: var(--blanco);
             font-weight: bold;
-            background: #3766b1;
+            background: var(--verde);
             border: none;
             cursor: pointer;
         }
 
         button:hover {
-            background: #234578;
+            background: var(--gris);
         }
 
-        .consulta {
-            text-align: center;
-            background: #e9f0ff;
+        .boton-datos {
+            color: var(--texto);
+            background: var(--dorado);
         }
 
-        .boton-enlace {
-            display: inline-block;
-            padding: 12px 22px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            background: #17815c;
-            border-radius: 6px;
-        }
-
-        .boton-enlace:hover {
-            background: #0e6445;
+        .boton-datos:hover {
+            color: var(--blanco);
+            background: var(--gris);
         }
 
         footer {
-            padding: 20px;
-            color: #666;
+            padding: 22px;
+            color: var(--blanco);
             text-align: center;
+            background: var(--gris);
         }
 
         @media (max-width: 600px) {
@@ -134,19 +149,27 @@
             <h2>Información registrada</h2>
 
             <p>
-                Consulta los miembros, identificadores,
-                estados y actividades registradas.
+                Consulta miembros, identificadores,
+                estados y actividades.
             </p>
 
-            <a href="/datos" class="boton-enlace">
-                Mostrar todos los datos
-            </a>
+            <form action="/datos" method="get">
+                <button
+                    class="boton-datos"
+                    type="submit"
+                >
+                    Mostrar todos los datos
+                </button>
+            </form>
         </section>
 
         <section>
             <h2>Agregar miembro</h2>
 
-            <form action="/agregar-miembro" method="post">
+            <form
+                action="/agregar-miembro"
+                method="post"
+            >
                 <label for="nombre">
                     Nombre completo
                 </label>
@@ -215,7 +238,10 @@
         <section>
             <h2>Cambiar estado de un miembro</h2>
 
-            <form action="/cambiar-estado" method="post">
+            <form
+                action="/cambiar-estado"
+                method="post"
+            >
                 <label for="miembro-id">
                     ID del estudiante
                 </label>
@@ -263,7 +289,10 @@
         <section>
             <h2>Agregar actividad</h2>
 
-            <form action="/agregar-actividad" method="post">
+            <form
+                action="/agregar-actividad"
+                method="post"
+            >
                 <label for="actividad-nombre">
                     Nombre de la actividad
                 </label>
@@ -316,7 +345,7 @@
     </main>
 
     <footer>
-        CC2008 – Programación Orientada a Objetos
+        Programación Orientada a Objetos Kathy y Abril 
     </footer>
 </body>
 </html>
